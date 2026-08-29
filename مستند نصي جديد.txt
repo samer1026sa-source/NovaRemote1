@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Nova Remote</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+
+<!-- =========================================
+     LOGIN / REGISTER
+========================================= -->
+
+<div
+    id="loginScreen"
+    class="login-screen"
+>
+
+    <div class="login-card glass">
+
+        <div class="login-logo">
+            ⚡
+        </div>
+
+        <small class="eyebrow">
+            NOVA REMOTE
+        </small>
+
+        <h1 id="authTitle">
+            تسجيل الدخول
+        </h1>
+
+        <p id="authDescription">
+            سجل الدخول إلى حسابك
+        </p>
+
+
+        <div class="auth-tabs">
+
+            <button
+                id="loginTab"
+                class="auth-tab active"
+                type="button"
+            >
+                تسجيل الدخول
+            </button>
+
+            <button
+                id="registerTab"
+                class="auth-tab"
+                type="button"
+            >
+                إنشاء حساب
+            </button>
+
+        </div>
+
+
+        <div
+            id="nameGroup"
+            class="input-group hidden-field"
+        >
+
+            <label>
+                الاسم
+            </label>
+
+            <input
+                id="nameInput"
+                type="text"
+                placeholder="اكتب اسمك"
+                autocomplete="name"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                البريد الإلكتروني
+            </label>
+
+            <input
+                id="emailInput"
+                type="email"
+                dir="ltr"
+                placeholder="example@email.com"
+                autocomplete="email"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                الرمز السري
+            </label>
+
+            <div class="password-box">
+
+                <input
+                    id="passwordInput"
+                    type="password"
+                    dir="ltr"
+                    placeholder="الرمز السري"
+                >
+
+                <button
+                    id="togglePassword"
+                    class="show-password-btn"
+                    type="button"
+                >
+                    👁️
+                </button>
+
+            </div>
+
+            <small
+                id="passwordHelp"
+                class="input-help"
+            >
+                أدخل الرمز السري لحسابك
+            </small>
+
+        </div>
+
+
+        <button
+            id="forgotPasswordBtn"
+            class="forgot-password-btn"
+            type="button"
+        >
+            نسيت الرمز السري؟
+        </button>
+
+
+        <button
+            id="authBtn"
+            class="login-btn"
+            type="button"
+        >
+            تسجيل الدخول
+        </button>
+
+
+        <small
+            id="loginError"
+            class="login-error"
+        ></small>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     FORGOT PASSWORD
+========================================= -->
+
+<div
+    id="forgotPasswordScreen"
+    class="login-screen hidden"
+>
+
+    <div class="login-card glass">
+
+        <div class="login-logo">
+            🔐
+        </div>
+
+        <small class="eyebrow">
+            NOVA REMOTE
+        </small>
+
+        <h1>
+            إعادة تعيين الرمز
+        </h1>
+
+        <p>
+            أدخل بريد حسابك ثم اختر رمزًا سريًا جديدًا
+        </p>
+
+
+        <div class="input-group">
+
+            <label>
+                البريد الإلكتروني
+            </label>
+
+            <input
+                id="forgotEmailInput"
+                type="email"
+                dir="ltr"
+                placeholder="example@email.com"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                الرمز السري الجديد
+            </label>
+
+            <div class="password-box">
+
+                <input
+                    id="newPasswordInput"
+                    type="password"
+                    dir="ltr"
+                    placeholder="مثال Nova123"
+                >
+
+                <button
+                    id="toggleNewPassword"
+                    class="show-password-btn"
+                    type="button"
+                >
+                    👁️
+                </button>
+
+            </div>
+
+            <small class="input-help">
+                5 خانات على الأقل ويحتوي على حرف ورقم
+            </small>
+
+        </div>
+
+
+        <button
+            id="resetPasswordBtn"
+            class="login-btn"
+            type="button"
+        >
+            تغيير الرمز السري
+        </button>
+
+
+        <button
+            id="backToLoginBtn"
+            class="back-login-btn"
+            type="button"
+        >
+            الرجوع لتسجيل الدخول
+        </button>
+
+
+        <small
+            id="forgotError"
+            class="login-error"
+        ></small>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     APP
+========================================= -->
+
+<div class="app">
+
+
+<!-- =========================================
+     HOME
+========================================= -->
+
+<main
+    id="homePage"
+    class="page active"
+>
+
+    <header class="topbar">
+
+        <div>
+
+            <small class="eyebrow">
+                PC REMOTE
+            </small>
+
+            <h1>
+                Nova Remote
+            </h1>
+
+            <div class="connection">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    متصل بالكمبيوتر
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="powerButton"
+            class="round-btn"
+        >
+            ⚡
+        </button>
+
+    </header>
+
+
+
+    <section class="hero-card glass">
+
+        <div class="pc-row">
+
+            <div class="pc-icon">
+                🖥️
+            </div>
+
+
+            <div>
+
+                <small>
+                    الجهاز الحالي
+                </small>
+
+                <h2 class="pc-user-name">
+                    المستخدم
+                </h2>
+
+                <p>
+                    Windows 11 • Local Network
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stats">
+
+            <div class="stat-box">
+
+                <span>
+                    CPU
+                </span>
+
+                <strong>
+                    27%
+                </strong>
+
+                <div class="bar">
+                    <i style="width:27%"></i>
+                </div>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <span>
+                    GPU
+                </span>
+
+                <strong>
+                    43%
+                </strong>
+
+                <div class="bar">
+                    <i style="width:43%"></i>
+                </div>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <span>
+                    RAM
+                </span>
+
+                <strong>
+                    14 / 32 GB
+                </strong>
+
+                <div class="bar">
+                    <i style="width:44%"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="mini-stats">
+
+        <div>
+            <span>📡</span>
+            <small>Ping</small>
+            <strong>12 ms</strong>
+        </div>
+
+        <div>
+            <span>⚡</span>
+            <small>FPS</small>
+            <strong id="miniFps">60</strong>
+        </div>
+
+        <div>
+            <span>🌡️</span>
+            <small>GPU</small>
+            <strong>42°C</strong>
+        </div>
+
+        <div>
+            <span>🎮</span>
+            <small>Mode</small>
+            <strong>Gaming</strong>
+        </div>
+
+    </section>
+
+
+
+    <div class="section-title">
+
+        <div>
+            <small>البث المباشر</small>
+            <h2>الشاشة</h2>
+        </div>
+
+        <button
+            id="refreshScreenBtn"
+            class="small-round-btn"
+        >
+            ↻
+        </button>
+
+    </div>
+
+
+
+    <section class="display-select">
+
+        <button
+            class="display-btn active"
+            data-screen="1"
+        >
+
+            <span>🖥️</span>
+
+            <div>
+                <strong>الرئيسية</strong>
+                <small>2560 × 1440</small>
+            </div>
+
+        </button>
+
+
+        <button
+            class="display-btn"
+            data-screen="2"
+        >
+
+            <span>▣</span>
+
+            <div>
+                <strong>الثانية</strong>
+                <small>1920 × 1080</small>
+            </div>
+
+        </button>
+
+    </section>
+
+
+
+    <section class="screen-card">
+
+        <div class="screen-top">
+
+            <span class="live">
+                <i></i>
+                LIVE
+            </span>
+
+            <button id="fullscreenBtn">
+                ⛶
+            </button>
+
+        </div>
+
+
+        <div
+            id="remoteScreen"
+            class="remote-screen"
+        >
+
+            <div class="desktop-demo">
+
+                <div class="nova-logo">
+                    NOVA
+                </div>
+
+
+                <div class="demo-window">
+
+                    <span>
+                        ● Connected
+                    </span>
+
+                    <h3>
+                        Ready to Control
+                    </h3>
+
+                    <p>
+                        PC Remote Session
+                    </p>
+
+                </div>
+
+
+                <div class="dock">
+                    ⊞ 🌐 📁 🎮 ⚙️
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="screen-info">
+
+            <span id="homeResolution">
+                1440p
+            </span>
+
+            <span id="homeFps">
+                60 FPS
+            </span>
+
+            <span>
+                18 Mbps
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <div class="section-title">
+
+        <div>
+            <small>التحكم</small>
+            <h2>اختصارات سريعة</h2>
+        </div>
+
+    </div>
+
+
+
+    <section class="quick-grid">
+
+        <button
+            id="mouseBtn"
+            class="action-card cyan"
+        >
+            <span>🖱️</span>
+            <strong>الماوس</strong>
+            <small>تحكم كامل</small>
+        </button>
+
+
+        <button
+            id="keyboardBtn"
+            class="action-card violet"
+        >
+            <span>⌨️</span>
+            <strong>الكيبورد</strong>
+            <small>كتابة واختصارات</small>
+        </button>
+
+
+        <button
+            id="gamepadBtn"
+            class="action-card blue"
+        >
+            <span>🎮</span>
+            <strong>يد التحكم</strong>
+            <small>Gamepad</small>
+        </button>
+
+
+        <button
+            id="desktopBtn"
+            class="action-card orange"
+        >
+            <span>◫</span>
+            <strong>سطح المكتب</strong>
+            <small>Win + D</small>
+        </button>
+
+    </section>
+
+
+
+    <section class="control-card glass">
+
+        <div class="section-title inside">
+
+            <div>
+                <small>CONTROL CENTER</small>
+                <h2>التحكم المباشر</h2>
+            </div>
+
+        </div>
+
+
+        <div class="control-grid">
+
+            <button id="rightClickBtn">
+                🖱️
+                <span>كليك يمين</span>
+            </button>
+
+            <button id="scrollUpBtn">
+                ⌃
+                <span>تمرير أعلى</span>
+            </button>
+
+            <button id="scrollDownBtn">
+                ⌄
+                <span>تمرير أسفل</span>
+            </button>
+
+            <button id="altTabBtn">
+                ▣
+                <span>Alt + Tab</span>
+            </button>
+
+        </div>
+
+
+        <div class="media-grid">
+
+            <button id="volumeDownBtn">
+                🔉
+                <small>صوت -</small>
+            </button>
+
+            <button id="muteBtn">
+                🔇
+                <small>كتم</small>
+            </button>
+
+            <button id="volumeUpBtn">
+                🔊
+                <small>صوت +</small>
+            </button>
+
+            <button id="taskManagerBtn">
+                📊
+                <small>المهام</small>
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================
+     SCREENS
+========================================= -->
+
+<main
+    id="screensPage"
+    class="page"
+>
+
+    <header class="page-header">
+
+        <div>
+            <small class="eyebrow">
+                DISPLAYS
+            </small>
+
+            <h1>
+                الشاشات
+            </h1>
+        </div>
+
+    </header>
+
+
+    <section class="screen-settings-card glass">
+
+        <div class="big-setting-icon">
+            🖥️
+        </div>
+
+        <div>
+            <small>الشاشة الرئيسية</small>
+            <strong>2560 × 1440</strong>
+            <span>Display 1</span>
+        </div>
+
+        <div class="online-badge">
+            متصلة
+        </div>
+
+    </section>
+
+
+    <section class="screen-settings-card glass">
+
+        <div class="big-setting-icon">
+            🖥️
+        </div>
+
+        <div>
+            <small>الشاشة الثانية</small>
+            <strong>1920 × 1080</strong>
+            <span>Display 2</span>
+        </div>
+
+        <div class="online-badge">
+            متصلة
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================
+     PC SPECS
+========================================= -->
+
+<main
+    id="pcSpecsPage"
+    class="page"
+>
+
+    <header class="page-header">
+
+        <div>
+            <small class="eyebrow">
+                PC HARDWARE
+            </small>
+
+            <h1>
+                مواصفات البي سي
+            </h1>
+        </div>
+
+    </header>
+
+
+    <section class="device-hero glass">
+
+        <div class="big-device-icon">
+            💻
+        </div>
+
+        <div>
+
+            <small>
+                جهازك الحالي
+            </small>
+
+            <h2 class="pc-user-name">
+                المستخدم
+            </h2>
+
+            <p>
+                معلومات الكمبيوتر
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="info-grid">
+
+        <div class="info-card">
+            <span>⚡</span>
+            <small>المعالج</small>
+            <strong>Intel Core i7-12700F</strong>
+        </div>
+
+
+        <div class="info-card">
+            <span>🎮</span>
+            <small>كرت الشاشة</small>
+            <strong>NVIDIA GeForce RTX 4060 8GB</strong>
+        </div>
+
+
+        <div class="info-card">
+            <span>🧠</span>
+            <small>الرام</small>
+            <strong>16GB DDR5 5200MHz</strong>
+        </div>
+
+
+        <div class="info-card">
+            <span>💾</span>
+            <small>التخزين</small>
+            <strong>1TB NVMe SSD</strong>
+        </div>
+
+
+        <div class="info-card">
+            <span>🧩</span>
+            <small>المذربورد</small>
+            <strong>ASUS PRIME B760-PLUS</strong>
+        </div>
+
+
+        <div class="info-card">
+            <span>🔌</span>
+            <small>مزود الطاقة</small>
+            <strong>850W</strong>
+        </div>
+
+    </section>
+
+
+    <section class="details-card glass">
+
+        <div>
+            <span>اسم الجهاز</span>
+            <strong class="pc-user-name">
+                المستخدم
+            </strong>
+        </div>
+
+        <div>
+            <span>نظام التشغيل</span>
+            <strong>Windows 11 Pro</strong>
+        </div>
+
+        <div>
+            <span>عنوان IP</span>
+            <strong id="specIp">
+                192.168.1.15
+            </strong>
+        </div>
+
+        <div>
+            <span>الدقة الرئيسية</span>
+            <strong>2560 × 1440</strong>
+        </div>
+
+        <div>
+            <span>عدد الشاشات</span>
+            <strong>2</strong>
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================
+     SETTINGS
+========================================= -->
+
+<main
+    id="settingsPage"
+    class="page"
+>
+
+    <header class="page-header">
+
+        <div>
+            <small class="eyebrow">
+                NOVA REMOTE
+            </small>
+
+            <h1>
+                الإعدادات
+            </h1>
+        </div>
+
+    </header>
+
+
+    <button
+        id="accountCard"
+        class="profile-card glass profile-button"
+        data-go="accountSettingsPage"
+    >
+
+        <div class="profile-avatar">
+            👤
+        </div>
+
+        <div class="profile-info">
+
+            <small>
+                الحساب
+            </small>
+
+            <strong id="profileName">
+                المستخدم
+            </strong>
+
+            <span id="profileEmail">
+                -
+            </span>
+
+        </div>
+
+        <span class="arrow">
+            ‹
+        </span>
+
+    </button>
+
+
+
+    <section class="settings-list glass">
+
+        <button
+            class="settings-item"
+            data-go="connectionSettingsPage"
+        >
+
+            <div class="setting-icon violet-bg">
+                📡
+            </div>
+
+            <div class="setting-text">
+
+                <strong>
+                    الاتصال
+                </strong>
+
+                <small>
+                    الشبكة والاتصال بالكمبيوتر
+                </small>
+
+            </div>
+
+            <span class="arrow">
+                ‹
+            </span>
+
+        </button>
+
+
+        <button
+            class="settings-item"
+            data-go="streamSettingsPage"
+        >
+
+            <div class="setting-icon blue-bg">
+                🖥️
+            </div>
+
+            <div class="setting-text">
+
+                <strong>
+                    جودة البث
+                </strong>
+
+                <small>
+                    الدقة و FPS وجودة الصورة
+                </small>
+
+            </div>
+
+            <span class="arrow">
+                ‹
+            </span>
+
+        </button>
+
+
+        <button
+            class="settings-item"
+            data-go="controlSettingsPage"
+        >
+
+            <div class="setting-icon orange-bg">
+                🎮
+            </div>
+
+            <div class="setting-text">
+
+                <strong>
+                    إعدادات التحكم
+                </strong>
+
+                <small>
+                    حساسية الماوس والتمرير
+                </small>
+
+            </div>
+
+            <span class="arrow">
+                ‹
+            </span>
+
+        </button>
+
+    </section>
+
+
+    <button
+        id="logoutBtn"
+        class="logout-btn"
+    >
+        تسجيل الخروج
+    </button>
+
+</main>
+
+
+
+<!-- =========================================
+     ACCOUNT SETTINGS
+========================================= -->
+
+<main
+    id="accountSettingsPage"
+    class="page"
+>
+
+    <header class="page-header">
+
+        <div>
+            <small class="eyebrow">
+                ACCOUNT
+            </small>
+
+            <h1>
+                تعديل الحساب
+            </h1>
+        </div>
+
+        <button
+            class="back-btn"
+            data-go="settingsPage"
+        >
+            ‹
+        </button>
+
+    </header>
+
+
+    <section class="option-card glass">
+
+        <div class="setting-page-icon">
+            👤
+        </div>
+
+
+        <label>
+            الاسم
+        </label>
+
+        <input
+            id="editNameInput"
+            class="settings-input"
+            type="text"
+        >
+
+
+        <label>
+            البريد الإلكتروني
+        </label>
+
+        <input
+            id="editEmailInput"
+            class="settings-input"
+            type="email"
+            dir="ltr"
+        >
+
+
+        <label>
+            رمز سري جديد
+        </label>
+
+        <input
+            id="editPasswordInput"
+            class="settings-input"
+            type="password"
+            dir="ltr"
+            placeholder="اتركه فارغًا إذا ما تبي تغيّره"
+        >
+
+
+        <small class="account-hint">
+            إذا غيرت الرمز، لازم يكون 5 خانات على الأقل ويحتوي على حرف ورقم.
+        </small>
+
+
+        <button
+            id="saveAccountBtn"
+            class="save-btn"
+        >
+            حفظ التعديلات
+        </button>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================
+     CONNECTION
+========================================= -->
+
+<main
+    id="connectionSettingsPage"
+    class="page"
+>
+
+    <header class="page-header">
+
+        <div>
+            <small class="eyebrow">
+                CONNECTION
+            </small>
+
+            <h1>
+                إعدادات الاتصال
+            </h1>
+        </div>
+
+        <button
+            class="back-btn"
+            data-go="settingsPage"
+        >
+            ‹
+        </button>
+
+    </header>
+
+
+    <section class="option-card glass">
+
+        <div class="setting-page-icon">
+            📡
+        </div>
+
+
+        <label>
+            عنوان IP للكمبيوتر
+        </label>
+
+        <input
+            id="pcIpInput"
+            class="settings-input"
+            type="text"
+            dir="ltr"
+            placeholder="192.168.1.15"
+        >
+
+
+        <label>
+            Port
+        </label>
+
+        <input
+            id="pcPortInput"
+            class="settings-input"
+            type="number"
+            dir="ltr"
+            value="8080"
+        >
+
+
+        <div class="toggle-row">
+
+            <div>
+                <strong>
+                    الاتصال التلقائي
+                </strong>
+
+                <small>
+                    الاتصال بالجهاز عند فتح التطبيق
+                </small>
+            </div>
+
+
+            <label class="switch">
+
+                <input
+                    id="autoConnectToggle"
+                    type="checkbox"
+                    checked
+                >
+
+                <span></span>
+
+            </label>
+
+        </div>
+
+
+        <button
+            id="saveConnectionBtn"
+            class="save-btn"
+        >
+            حفظ إعدادات الاتصال
+        </button>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================
+     STREAM
+========================================= -->
+
+<main
+    id="streamSettingsPage"
+    class="page"
+>
+
+    <header class="page-header">
+
+        <div>
+            <small class="eyebrow">
+                STREAM
+            </small>
+
+            <h1>
+                جودة البث
+            </h1>
+        </div>
+
+        <button
+            class="back-btn"
+            data-go="settingsPage"
+        >
+            ‹
+        </button>
+
+    </header>
+
+
+    <section class="option-card glass">
+
+        <div class="setting-page-icon">
+            🖥️
+        </div>
+
+
+        <label>
+            دقة البث
+        </label>
+
+        <select
+            id="resolutionSelect"
+            class="settings-input"
+        >
+
+            <option value="720">
+                720p
+            </option>
+
+            <option value="1080">
+                1080p
+            </option>
+
+            <option value="1440">
+                1440p
+            </option>
+
+        </select>
+
+
+        <label>
+            معدل الإطارات
+        </label>
+
+        <select
+            id="fpsSelect"
+            class="settings-input"
+        >
+
+            <option value="30">
+                30 FPS
+            </option>
+
+            <option value="60">
+                60 FPS
+            </option>
+
+        </select>
+
+
+        <label>
+            جودة الصورة
+        </label>
+
+        <select
+            id="qualitySelect"
+            class="settings-input"
+        >
+
+            <option value="low">
+                منخفضة
+            </option>
+
+            <option value="medium">
+                متوسطة
+            </option>
+
+            <option value="high">
+                عالية
+            </option>
+
+            <option value="ultra">
+                فائقة
+            </option>
+
+        </select>
+
+
+        <button
+            id="saveStreamBtn"
+            class="save-btn"
+        >
+            حفظ جودة البث
+        </button>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================
+     CONTROL SETTINGS
+========================================= -->
+
+<main
+    id="controlSettingsPage"
+    class="page"
+>
+
+    <header class="page-header">
+
+        <div>
+            <small class="eyebrow">
+                CONTROL
+            </small>
+
+            <h1>
+                إعدادات التحكم
+            </h1>
+        </div>
+
+        <button
+            class="back-btn"
+            data-go="settingsPage"
+        >
+            ‹
+        </button>
+
+    </header>
+
+
+    <section class="option-card glass">
+
+        <div class="setting-page-icon">
+            🎮
+        </div>
+
+
+        <label>
+            حساسية الماوس
+        </label>
+
+        <input
+            id="mouseSensitivity"
+            type="range"
+            min="1"
+            max="10"
+            value="5"
+        >
+
+
+        <div class="range-value">
+
+            <span>
+                منخفضة
+            </span>
+
+            <strong id="mouseValue">
+                5
+            </strong>
+
+            <span>
+                عالية
+            </span>
+
+        </div>
+
+
+        <label>
+            سرعة التمرير
+        </label>
+
+        <input
+            id="scrollSpeed"
+            type="range"
+            min="1"
+            max="10"
+            value="5"
+        >
+
+
+        <div class="range-value">
+
+            <span>
+                بطيء
+            </span>
+
+            <strong id="scrollValue">
+                5
+            </strong>
+
+            <span>
+                سريع
+            </span>
+
+        </div>
+
+
+        <div class="toggle-row">
+
+            <div>
+
+                <strong>
+                    الاهتزاز
+                </strong>
+
+                <small>
+                    اهتزاز عند الضغط على الأزرار
+                </small>
+
+            </div>
+
+
+            <label class="switch">
+
+                <input
+                    id="vibrationToggle"
+                    type="checkbox"
+                    checked
+                >
+
+                <span></span>
+
+            </label>
+
+        </div>
+
+
+        <button
+            id="saveControlBtn"
+            class="save-btn"
+        >
+            حفظ إعدادات التحكم
+        </button>
+
+    </section>
+
+</main>
+
+
+</div>
+
+
+
+<!-- =========================================
+     BOTTOM NAV
+========================================= -->
+
+<nav class="bottom-nav">
+
+    <button
+        class="nav-btn active"
+        data-go="homePage"
+    >
+        <span>⌂</span>
+        <small>الرئيسية</small>
+    </button>
+
+
+    <button
+        class="nav-btn"
+        data-go="screensPage"
+    >
+        <span>🖥️</span>
+        <small>الشاشات</small>
+    </button>
+
+
+    <button
+        id="centerPowerBtn"
+        class="main-nav-btn"
+    >
+        ⚡
+    </button>
+
+
+    <button
+        class="nav-btn"
+        data-go="pcSpecsPage"
+    >
+        <span>💻</span>
+        <small>مواصفات البي سي</small>
+    </button>
+
+
+    <button
+        class="nav-btn"
+        data-go="settingsPage"
+    >
+        <span>⚙️</span>
+        <small>الإعدادات</small>
+    </button>
+
+</nav>
+
+
+
+<!-- =========================================
+     KEYBOARD
+========================================= -->
+
+<div
+    id="keyboardModal"
+    class="keyboard-modal"
+>
+
+    <div class="keyboard-box">
+
+        <div class="keyboard-head">
+
+            <h3>
+                ⌨️ الكيبورد
+            </h3>
+
+            <button id="closeKeyboard">
+                ✕
+            </button>
+
+        </div>
+
+
+        <textarea
+            id="keyboardText"
+            placeholder="اكتب هنا..."
+        ></textarea>
+
+
+        <button
+            id="sendKeyboardBtn"
+            class="save-btn"
+        >
+            إرسال
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<div
+    id="toast"
+    class="toast"
+></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
